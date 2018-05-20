@@ -1,0 +1,4 @@
+[submodule "create-react-app"]
+	path = create-react-app
+	url = https://github.com/facebook/create-react-app.git
+	branch = next

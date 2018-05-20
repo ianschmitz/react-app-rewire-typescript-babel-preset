@@ -1,7 +1,11 @@
 {
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "create-react-app/packages/react-scripts",
+    "create-react-app/packages/react-dev-utils",
+    "create-react-app/packages/babel-plugin-named-asset-import",
+    "create-react-app/packages/babel-preset-react-app"
   ],
   "scripts": {
     "build": "tsc -p ./tsconfig.build.json",

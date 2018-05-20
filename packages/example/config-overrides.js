@@ -1,3 +1,7 @@
+const paths = require("react-scripts/config/paths");
+
+paths.srcPaths = paths.srcPaths.filter(p => !/create-react-app/.test(p));
+
 const {
   rewireWebpack: rewireTypescript,
   rewireJest: rewireTypescriptJest
@@ -12,6 +16,12 @@ module.exports = {
     return rewireTypescript(config);
   },
   jest: function(config) {
-    return rewireTypescriptJest(config);
+    const rewiredConfig = rewireTypescriptJest(config);
+
+    rewiredConfig.roots = rewiredConfig.roots.filter(
+      p => !/create-react-app/.test(p)
+    );
+
+    return rewiredConfig;
   }
 };
